@@ -7,12 +7,22 @@ namespace UnitTest
     [TestClass]
     public class UnitTest1
     {
+        /*
+        Active Promotions
+        *****************
+        3 of A's for 130
+        2 of B's for 45
+        1 Of C & 1 of D for 30
+        */
+
+        /// <summary>
+        /// Scenario A Testing
+        /// </summary>
         [TestMethod]
         public void ScenarioATesting()
         {
             var orders = new List<Order>();
 
-            //Scenario A Testing
             var order = new Order
             {
                 Id = 1,
@@ -65,12 +75,15 @@ namespace UnitTest
 
         }
 
+        /// <summary>
+        /// Scenario B Testing
+        /// </summary>
         [TestMethod]
         public void ScenarioBTesting()
         {
             var orders = new List<Order>();
 
-            //Scenario A Testing
+
             var order = new Order
             {
                 Id = 1,
@@ -118,16 +131,16 @@ namespace UnitTest
             var actual = 370D;
             Assert.AreEqual(actual, expected);
 
-
-
         }
 
+        /// <summary>
+        /// Scenario C Testing
+        /// </summary>
         [TestMethod]
         public void ScenarioCTesting()
         {
             var orders = new List<Order>();
 
-            //Scenario A Testing
             var order = new Order
             {
                 Id = 1,
@@ -188,9 +201,6 @@ namespace UnitTest
             var expected = promotionEngine.CalculatePromotion(orders);
             var actual = 280D;
             Assert.AreEqual(actual, expected);
-
-
-
         }
     }
 }

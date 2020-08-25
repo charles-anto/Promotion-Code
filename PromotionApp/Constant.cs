@@ -7,8 +7,8 @@
         public const int ProductCPrice = 20;
         public const int ProductDPrice = 15;
 
-        public const int ProductADiscount = 40;
-        public const int ProductBDiscount = 50;
+        public const int ProductADiscount = 13;
+        public const int ProductBDiscount = 25;
         public const int ProductCDDiscount = 25;
 
         public const int ProductMinCountPromotionForA = 3;

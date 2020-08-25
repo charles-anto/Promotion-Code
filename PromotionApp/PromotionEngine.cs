@@ -117,7 +117,7 @@ namespace PromotionApp
             int promotionCount = qty / productMinCountPromotion;
             int nonPromotionItems = qty % productMinCountPromotion;
 
-            double promotionAmount = promotionCount * (unitPrice * (productMinCountPromotion - 1) + (unitPrice - (unitPrice * discount / 100)));
+            double promotionAmount = promotionCount * ((unitPrice * productMinCountPromotion) - Math.Round(((unitPrice * productMinCountPromotion) * discount/100))) ;
 
             double nonpromotionAmount = nonPromotionItems * unitPrice;
 

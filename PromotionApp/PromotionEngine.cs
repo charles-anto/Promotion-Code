@@ -11,24 +11,22 @@ namespace PromotionApp
 
             //SKU A Calculation
 
-            if (orders.Any(x => x.SkuCode.ToUpper() == "A"))
-            {
+           
                 var groupBySkuIdOrder = orders.FirstOrDefault(x => x.SkuCode.ToUpper() == "A");
-                totalAmount += PromotionSingle(groupBySkuIdOrder.Qty
+                totalAmount = PromotionSingle(groupBySkuIdOrder.Qty
                                             , groupBySkuIdOrder.UnitPrice
                                             , groupBySkuIdOrder.DiscountPercentage
                                             , groupBySkuIdOrder.ProductMinCountPromotion);
-            }
+            
 
             //SKU B Calculation
-            if (orders.Any(x => x.SkuCode.ToUpper() == "B"))
-            {
+            
                 var groupBySkuIdOrder = orders.FirstOrDefault(x => x.SkuCode.ToUpper() == "B");
                 totalAmount += PromotionSingle(groupBySkuIdOrder.Qty
                                             , groupBySkuIdOrder.UnitPrice
                                             , groupBySkuIdOrder.DiscountPercentage
                                             , groupBySkuIdOrder.ProductMinCountPromotion);
-            }
+            
 
             //SKU C / D Calculation
             var groupBySkuOrders = orders.Where(x => x.SkuCode.ToUpper() == "C" || x.SkuCode.ToUpper() == "D");
@@ -115,7 +113,7 @@ namespace PromotionApp
         private double PromotionSingle(int qty, double unitPrice, int discount, int productMinCountPromotion)
         {
             int promotionCount = qty / productMinCountPromotion;
-            int nonPromotionItems = qty % productMinCountPromotion;
+            int nonPromotionItems = qty / productMinCountPromotion;
 
             double promotionAmount = promotionCount * ((unitPrice * productMinCountPromotion) - Math.Round(((unitPrice * productMinCountPromotion) * discount/100))) ;
 

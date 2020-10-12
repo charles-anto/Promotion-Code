@@ -100,7 +100,7 @@ namespace PromotionApp
                 /*
                 int resultA = 0;
 
-                int remainderA = productA % 3;
+                int remainderA = productA / 3;
                 int quotientA = productA / 3;
 
                 resultA = (quotientA * 130) + (remainderA * 50);
@@ -110,7 +110,7 @@ namespace PromotionApp
                 Console.WriteLine("---------------------------------------");
                 Console.WriteLine("Calculation of A    : "+ resultA);
 
-                int remainderB = productB % 2;
+                int remainderB = productB / 2;
                 int quotientB = productB / 2;
 
                 var resultB = (quotientB * 45) + (remainderB * 30);
